@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>光环大数据课程表首页</title>
+</head>
+<script language="JavaScript" src="{% static 'js/jquery-1.11.3.js' %}"></script>
+{#<script language="JavaScript" src="{% static 'js/html2canvas.js' %}"></script>#}
+
+<script language="JavaScript" src="{% static 'js/school.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'stylesheets/simple-calendar.css' %}">
+<script type="text/javascript" src="{% static 'javascripts/simple-calendar.js' %}"></script>
+<body background="{% static '/images/bg.jpg' %}">
+    <script>
+        $(function () {
+            get_course("{% url 'first_app:get_course' %}");
+        });
+    </script>
+
+<div>
+    <div>
+        <h2>光环大数据课程表</h2>
+        <table>
+            <tr id="course">
+            </tr>
+        </table>
+    </div>
+
+    <div>
+        <table id="display_table" style="border-top: none; float: right" align="center" width="300px" bgcolor="#f0e68c"></table>
+        <div><table id="teacher_msg"></table></div>
+
+    </div>
+    <div id="date_setting" style="float: left"></div>
+
+
+</div>
+    <div id="arrange"></div>
+    <div id='container'></div>
+{#    <script>#}
+{#        var myCalendar = new SimpleCalendar('#container');#}
+{#    </script>#}
+
+</body>
+</html>
